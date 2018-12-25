@@ -1,8 +1,8 @@
-###实战项目备份防止本地webpack又报错
+### 实战项目备份防止本地webpack又报错
 
-#使用的是webpack4+react—+react-router4+react-redux+antd+axios 一系列工具
+# 使用的是webpack4+react—+react-router4+react-redux+antd+axios 一系列工具
 
-##目录结构
+## 目录结构
 - src
 	- axios （ajax封装）
 	- component （各种组件 比如面包屑 头部尾部 导航栏）
