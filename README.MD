@@ -13,6 +13,6 @@
 	  - store （redux的store和aciton）
 	- routes （内部页面的路由处理结构）
 	- style （默认和全局样式）
-	-authrouter （权限认证路由页面）
+	- authrouter （权限认证路由页面）
 
-# 第一次写react整站项目有点吃力 mock就很滑了。。就写了一点点
+### 第一次写react整站项目有点吃力 mock就很滑了。。就写了一点点
