@@ -8,4 +8,4 @@ export const MOCK_AUTH = EASY_MOCK + '/5c0e035e0f8e282e08dd2f6d/webpack4-react';
 export const LOGIN_AUTH=MOCK_AUTH+'/login';
 export const USER_AUTH=MOCK_AUTH+'/permission';
 export const TABLE_AUTH=MOCK_AUTH+'/animation';
-
+export const USERDETAIL_AUTH=MOCK_AUTH+'/userdetail';

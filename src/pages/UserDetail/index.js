@@ -1,74 +1,51 @@
 import React from 'react'
-import { Card, Table, Modal, Button, message, Badge } from 'antd'
-import { user } from '@/axios'
+import { Card, Table, Modal, Button, message, Badge,Icon } from 'antd'
+import { NavLink } from 'react-router-dom'
+import { userdetail } from '@/axios'
 import "antd/dist/antd.css"
 import Loading from '@/components/Loading'
 
 
-
 export default class User extends React.Component {
-
-constructor(props){
-	super(props);
-	this.state={
-		userlist:[],
-		selectedRowKeys:[],
-		disPlay:"block"
-	}
+   constructor(props){
+    super(props);
+    this.state={
+        selectedRowKeys:[],
+        list:[]
+    }
 }
-	getUserList(){
-        user().then(res=>{
-            res.data.map((item,index)=>{
-                        item.key=index
-                    })
+  componentWillMount(){
+
+
+}
+  componentDidMount(){
+    userdetail().then(res=>{
+      this.setState({
+        userdetaillist:res.data,
+        list:res.data.slice(0,10),
+        disPlay:"none"
+      });
+    });
+}
+    render(){
+        const selectedRowKeys=this.state.selectedRowKeys
+    const rowSelection={
+        type:'checkbox',
+        selectedRowKeys,
+        onChange:(selectedRowKeys,selectedRows)=>{
             this.setState({
-                    userlist:res.data,
-                    disPlay:"none"
-                })
-        })
-		// let basicurl="https://www.easy-mock.com/mock/5c0e035e0f8e282e08dd2f6d/webpack4-react";
-		// axios.get(basicurl+'/permission').then((res)=>{							
-		// 	if(res.status==200 && res.data.code==0){
-		// 		res.data.data.map((item,index)=>{
-		// 				item.key=index
-		// 			})
-		// 		this.setState({
-		// 			userlist:res.data.data,
-		// 			disPlay:"none"
-		// 		})
-		// 	}
-		// })
-	}
-
-	componentDidMount(){
-		this.getUserList();
-	}
-
-render(){
-	const selectedRowKeys=this.state.selectedRowKeys
-	const rowSelection={
-		type:'checkbox',
-		selectedRowKeys,
-		onChange:(selectedRowKeys,selectedRows)=>{
-			this.setState({
-				selectedRowKeys,
-				selectedRows
-			});
-		}
-	}
-	function onChange(pagination, filters, sorter) {
-  console.log('params', pagination, filters, sorter);
-}
-	 const columns = [
+                selectedRowKeys,
+                selectedRows
+            });
+        }
+    }
+        const columns = [
             {
                 title: 'id',
                 key: 'id',
                 width:80,
                 dataIndex: 'id',
                 fixed: 'left',
-                render(id){
-                	return 	`${id+1}`;
-                }
             },
             {
                 title: '用户名',
@@ -81,12 +58,8 @@ render(){
             {
                 title: '性别',
                 key: 'sex',
-                width: 80,
+                width: 120,
                 dataIndex: 'sex',
-                sorter:(a)=>a.sex==0,
-                 filters: [{text:"男",value:1},{text:"女",value:0}],
-                 filterMultiple: false,
-                 onFilter: (value, record) => {record.sex== value},
                 render(sex) {
                     return sex == 1 ? '男' : '女'
                 }
@@ -94,7 +67,7 @@ render(){
              {
                 title: '年龄',
                 key: 'age',
-                width: 80,
+                width: 120,
                 dataIndex: 'age',
                 sorter:(a,b)=>a.age-b.age
             },
@@ -151,26 +124,24 @@ render(){
             }
         ]
 
-        return (
-        	<React.Fragment>
-        	<Loading display={this.state.disPlay}/>
-	        	<div className="user">
-	        		<Card  title="员工信息列表页">
-	        			<Table
-	        			bordered
-	        			rowSelection={rowSelection}
-	        				columns={columns}
-	        				dataSource={this.state.userlist}
-	        				pagination={false}
-	        				scroll={{y:280,x:1300
-	        				}}
-	        				onChange={onChange}
 
-	        			/>
-	        		</Card>
-	        	</div>
-        	</React.Fragment>
-        	)
-}
+            return (
+            <React.Fragment>
+            <Loading display={this.state.disPlay}/>
+                <div className="user">
+                    <Card  title="员工信息列表页">
+                        <Table
+                        bordered
+                        rowSelection={rowSelection}
+                            columns={columns}
+                            dataSource={this.state.list}
+                            pagination={false}
 
+                        />
+                        <Icon type="loading" large/>
+                    </Card>
+                </div>
+            </React.Fragment>
+            )
+    }
 }

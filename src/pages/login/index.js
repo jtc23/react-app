@@ -37,7 +37,6 @@ handlelogin= ()=>{
 	render() {
    const {getFieldDecorator} = this.props.form;
       const isLogged = JSON.parse(sessionStorage.getItem("isLogin"))==="1" ? true : false;
-    console.log(isLogged)
     return (
     <Card title="登录页面" id="login">
     <Form  className="login-form" onSubmit={(e)=>this.handleSubmit(e)}>

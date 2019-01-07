@@ -69,7 +69,7 @@ render(){
                 dataIndex: 'id',
                 fixed: 'left',
                 render(id){
-                	return 	(<NavLink to={`/user/${id}`} > {id+1}</NavLink>);
+                	return 	(<NavLink to={`/app/user/${id}`} > {id+1}</NavLink>);
                 }
             },
             {
