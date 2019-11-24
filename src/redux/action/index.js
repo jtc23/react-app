@@ -1,10 +1,10 @@
-
+import { textdata } from '@/axios'
 export const type= {
 	SWITCH_MENU : "SWITCH_MENU",
 	BREAD_CRUMB:"BREAD_CRUMB",
 	DELETE_BREAD_CRUMB:"DELETE_BREAD_CRUMB",
-	CHANGE_LOGIN:"CHANGE_LOGIN"
-
+	CHANGE_LOGIN:"CHANGE_LOGIN",
+	GET_LISTDATA:'GET_LISTDATA'
 }
 
 export const swithMenu =(menuName)=>({
@@ -32,3 +32,19 @@ export const changelogin=(login)=>({
 	login
 
 })
+export const geilist=(data)=>({
+
+	type:type.GET_LISTDATA,
+	data
+
+})
+export const getTestData=()=>{
+ return (dispatch) => {
+ 	textdata().then(res=>{
+ 		const data=res.list;
+ 		const action= geilist(data);
+ 		dispatch(action);
+ 	})
+ }
+
+}

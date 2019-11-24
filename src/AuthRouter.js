@@ -9,8 +9,8 @@ class AuthRouter extends Component {
         const route=<Component {...this.props} />
         return (
             <Route {...rest} render={props => {
-              return this.props.loginstate ? <Component {...props} /> : <Redirect to="/login"  />
-                  
+              // return this.props.loginstate ? <Component {...props} /> : <Redirect to="/login"  />
+                  return <Component {...props} />
             }} />
         )
       }

@@ -5,7 +5,7 @@ import NotFound from './pages/404'
 import LoginForm from './pages/login'
 import MainPage from './mainPage'
 import UserDetail from '@/pages/UserDetail'
-import Tset from '@/pages/Test'
+import Test from '@/pages/Test/loadable.js'
 
 
 
@@ -19,7 +19,7 @@ export default class Router extends React.Component{
     			<Switch>
                     <Route exact path="/" render={() => <Redirect to="/app/home"  />} />
                     <Route path="/login" component={LoginForm} />
-                    <Route path="/test" component={Tset} />
+                    <Route path="/test" component={Test} />
                     <Route path="/404" component={NotFound} />
                     <Route path="/app/user/:id" component={UserDetail} />
                     <Route path="/app" component={MainPage} />

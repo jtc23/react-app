@@ -12,6 +12,8 @@ export const gettable = () => get(config.TABLE_AUTH)
 
 export const userdetail = () => get(config.USERDETAIL_AUTH)
 
+export const textdata = () => get(config.TEST_DATA)
+
 
 
 

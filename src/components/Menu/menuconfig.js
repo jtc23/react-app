@@ -128,5 +128,10 @@ const menuList = [
         key: '/app/permission',
         icon:'safety'
     },
+    {
+        title: '测试页面',
+        key: '/test',
+        icon:'safety'
+    },
 ];
 export default menuList;

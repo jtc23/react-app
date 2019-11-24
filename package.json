@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "webpack-dev-server --open --port 3001 --hot --host 127.0.0.1"
+    "dev": "webpack-dev-server --open --port 8080 --hot --host 127.0.0.1"
   },
   "proxy": {
     "/*": {
@@ -50,12 +50,14 @@
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.2.0",
     "react-draft-wysiwyg": "^1.12.13",
+    "react-loadable": "^5.5.0",
     "react-qmap": "^0.1.5",
     "react-redux": "^6.0.0",
     "react-router-dom": "^4.2.2",
     "react-transition-group": "^2.5.2",
     "redux": "^4.0.1",
     "redux-devtools-extension": "^2.13.7",
+    "redux-thunk": "^2.3.0",
     "yarn": "^1.12.3"
   }
 }

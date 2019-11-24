@@ -13,7 +13,8 @@ const dafaultState ={
         key: '/app/form',
 	}
 	],
-	loginstate:false
+	loginstate:false,
+	listdata:''
 }
 
 
@@ -67,6 +68,12 @@ export default (state = dafaultState,action) =>{
 		return {
 			...state,
 			bread: deletecrumb(action.key,new_arr)
+		}
+		break;
+		case type.GET_LISTDATA:
+		return {
+			...state,
+			listdata: action.data
 		}
 		break;
 		case type.CHANGE_LOGIN:

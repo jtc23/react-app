@@ -68,6 +68,7 @@ export default class Home extends React.Component {
                             </Card>
                         </div>
                     </Col>
+                    
                     <Col className="gutter-row" md={16}>
                         <div className="gutter-box">
                             <Card bordered={false} className={'no-padding'}>
