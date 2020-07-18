@@ -45,7 +45,7 @@
     "draftjs-to-markdown": "^0.5.1",
     "echarts": "^4.2.0-rc.2",
     "echarts-for-react": "^2.0.15-beta.0",
-    "lodash": "^4.17.11",
+    "lodash": "^4.17.19",
     "react": "^16.2.0",
     "react-addons-css-transition-group": "^15.6.2",
     "react-dom": "^16.2.0",
